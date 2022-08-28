@@ -2,6 +2,19 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+function randomInt(min, max) {
+  if (!max) {
+    max = min
+    min = 0
+  }
+  var rand = Math.random()
+  return Math.floor(min*(1 - rand) + rand*max)
+}
+
+function getRandomItem(list) {
+  return list[randomInt(list.length)]
+}
+
 function generatePassword() {
 
   var userInput = window.prompt("how long do you want your password to be?")
@@ -40,6 +53,22 @@ function generatePassword() {
 
   if (userWantsSymbols === true) {
     optionsCart.push(symbolList)
+  }
+
+  if (userWantsLowercase === true) {
+    optionsCart.push(lowercaseList)
+  }
+
+  if (userWantsUppercase === true) {
+    optionsCart.push(uppercaseList)
+  }
+
+  var generatePassword = ""
+
+  for (var i = 0; i <passwordLength; i++) {
+    var randomList = getRandomItem(optionsCart)
+    var randomChar = getRandomItem(randomList)
+    console.log(randomChar)
   }
 
 }
