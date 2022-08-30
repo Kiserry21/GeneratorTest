@@ -19,7 +19,7 @@ function generatePassword() {
   }
   while (true) {
 
-    var userInput = window.prompt("how long do you want your password to be?")
+    var userInput = window.prompt("How long do you want your password to be?")
 
     // user exited the prompt
     if (userInput === null) {
@@ -42,9 +42,9 @@ function generatePassword() {
   var userWantsUppercase = window.confirm("would you like to include uppercase letters in your password?")
 
   var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-  var symbolList = ["!", "@", "#", "$", "%", "^", "&", "*"]
+  var symbolList = ["!", "@", "#", "$", "", "^", "&", "*"]
   var lowercaseList = ["a", "b", 'C','d', 'e', "f", "g", "h", "i", "j", "K", "l", "M", "n", "o", "p", "Q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  var uppercaseList = ["A", "B", 'C','D', 'E', "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  var uppercaseList = []
 
   var optionsCart = []
 
@@ -71,7 +71,7 @@ function generatePassword() {
   if (optionsCart.length === 0) {
     optionsCart.push(lowercaseList)
   }
-var generatePassword = ""
+  var generatedPassword = ""
 
   for (var i = 0; i <passwordLength; i++) {
     var randomList = getRandomItem(optionsCart)
@@ -79,7 +79,7 @@ var generatePassword = ""
     generatePassword += randomChar
   }
 
-  return generatePassword
+  return generatedPassword
 }
 
 
@@ -89,8 +89,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-if (!password) return
+if (password) { 
   passwordText.value = password;
+}
 
 }
 
