@@ -15,7 +15,7 @@ function getRandomItem(list) {
   return list[randomInt(list.length)]
 }
 
-function generatePassword() {
+function generatedPassword() {
 
   while (true) {
 
