@@ -37,8 +37,8 @@ function generatedPassword() {
 
   }
   var userWantsNumbers = window.confirm("would you like to include numbers in your password?")
-  var userWantsSymbols = window.confirm("w ould you like to include symbols in your password?")
-  var userWantsLowercase = window.confirm("would you like to include lowercase letters in your password?")
+  var userWantsSymbols = window.confirm("would you like to include symbols in your password?")
+  var userWantsLowercase = window.confirm("would you like to include lowercase letters in your password?") 
   var userWantsUppercase = window.confirm("would you like to include uppercase letters in your password?")
 
   var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -91,6 +91,7 @@ function writePassword() {
 
 if (password) { 
   passwordText.value = password;
+  console.log(password)
 }
 
 }
